@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Todo List</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Public CSS -->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <!-- Fontawesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <h1>Todo List</h1>
+    </div>
+    <div class="box">
+      <% foundItems.forEach(function(item) { %>
+      <form action="/delete" method="post">
+        <div class="item">
+          <input
+            type="checkbox"
+            name="checkbox"
+            value="<%= item._id %>"
+            onChange="this.form.submit()"
+          />
+          <span><p><%= item.name %></p></span>
+        </div>
+      </form>
+      <% }); %>
+
+      <form class="item" action="/add" method="post">
+        <input
+          type="text"
+          name="name"
+          placeholder="&#9998; Add Item"
+          autocomplete="off"
+        />
+        <button type="submit" name="list"><i class="fas fa-plus"></i></button>
+      </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var $curParent, Content;
+        $(document).delegate('span', 'click', function () {
+          if ($(this).closest('s').length) {
+            Content = $(this).parent('s').html();
+            $curParent = $(this).closest('s');
+            $(Content).insertAfter($curParent);
+            $(this).closest('s').remove();
+          } else {
+            $(this).wrapAll('<s />');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
