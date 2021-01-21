@@ -1,4 +1,4 @@
-# mongodb-nodejs-express-todo
+# mongo-nodejs-express-todo
 ✔️ Simple Todo List
 
 ## ❔ About
@@ -22,9 +22,9 @@ Just a simple Todo List where you can crossout, delete, and add items.
 ## 📝️ Website Features
 
 Basic Todo 
--Add item
--Delete item
--Crossout item
+-Add item 
+-Delete item 
+-Crossout item 
 
 ## Installing
 
