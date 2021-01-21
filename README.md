@@ -21,10 +21,10 @@ Just a simple Todo List where you can crossout, delete, and add items.
 
 ## 📝️ Website Features
 
-Basic Todo 
--Add item 
--Delete item 
--Crossout item 
+Basic Todo  
+-Add item  
+-Delete item   
+-Crossout item   
 
 ## Installing
 
